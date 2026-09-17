@@ -70,4 +70,11 @@ class GameController extends Controller
         $game->delete();
         return redirect('/games');
     }
+
+    // ⭐⭐⭐ NIEUWE SHOW FUNCTIE ⭐⭐⭐
+    public function show($id)
+    {
+        $game = Game::find($id);
+        return view('games.show', ['game' => $game]);
+    }
 }
